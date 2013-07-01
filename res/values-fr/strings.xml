@@ -4,5 +4,7 @@
     <string name="app_name">Un prénom par jour</string>
     <string name="action_settings">Options</string>
     <string name="hello_world">Bonjour le monde</string>
+    
+    <string name="firsnames_list_bt">Prénoms</string>
 
 </resources>

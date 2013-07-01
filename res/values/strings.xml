@@ -4,5 +4,7 @@
     <string name="app_name">NameOfTheDay</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    
+    <string name="firsnames_list_bt">Firstnames</string>
 
 </resources>
