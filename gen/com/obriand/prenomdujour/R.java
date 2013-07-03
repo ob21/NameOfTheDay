@@ -42,6 +42,7 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int firsname_dialog_ok_bt=0x7f050004;
         public static final int firsnames_list_bt=0x7f050003;
         public static final int hello_world=0x7f050002;
     }

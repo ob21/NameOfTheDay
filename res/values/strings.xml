@@ -6,5 +6,7 @@
     <string name="hello_world">Hello world!</string>
     
     <string name="firsnames_list_bt">Firstnames</string>
+    
+    <string name="firsname_dialog_ok_bt">OK</string>
 
 </resources>

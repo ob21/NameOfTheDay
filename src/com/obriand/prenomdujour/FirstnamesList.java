@@ -1,6 +1,8 @@
 package com.obriand.prenomdujour;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class FirstnamesList extends Activity {
 	
@@ -28,9 +29,19 @@ public class FirstnamesList extends Activity {
         mListView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
-                    long id) {               
-                String item = ((TextView)view.findViewById(R.id.item_title)).getText().toString();               
-                Toast.makeText(getBaseContext(), item, Toast.LENGTH_LONG).show();               
+                    long id) {                  
+                AlertDialog.Builder builder = new AlertDialog.Builder(FirstnamesList.this);
+                builder.setTitle(((TextView)view.findViewById(R.id.item_title)).getText().toString());
+                builder.setMessage(((TextView)view.findViewById(R.id.item_desc)).getText().toString());
+                builder.setPositiveButton(R.string.firsname_dialog_ok_bt, new DialogInterface.OnClickListener() {
+	                    @Override
+	                    public void onClick(DialogInterface dialog, int id) {
+	                    	dialog.cancel();
+	                    }
+                   	});
+                
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
         

@@ -51,7 +51,7 @@ public class FirstnamesListAdapter extends ArrayAdapter<Firstname> {
 
 	    Firstname firstname = mFirstnames.get(position);
 	    holder.txtTitle.setText(firstname.getName());
-	    holder.txtDesc.setText(String.valueOf(firstname.getOrigin().get(0)+" "+firstname.getFrequency())+" "+String.valueOf(firstname.getGender()));
+	    holder.txtDesc.setText(String.valueOf(firstname.getOrigin().get(0)+" "+firstname.getFrequency())+" "+firstname.getGender().toString());
 	   
 	    return view;
 

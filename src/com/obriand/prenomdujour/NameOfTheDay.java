@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import com.obriand.prenomdujour.Firstname.GenderType;
+
 import android.content.Context;
 
 public class NameOfTheDay {
@@ -37,8 +39,10 @@ public class NameOfTheDay {
 	        	String[] separated = line.split("	");
 	        	String name = separated[0];
 	        	Float frequency = Float.valueOf(separated[3]);
-	        	boolean gender = false;
-	        	if (separated[1].equals("m")) gender = true;
+	        	GenderType gender = GenderType.MALE;
+	        	if (separated[1].equals("m")) gender = GenderType.MALE;
+	        	if (separated[1].equals("f")) gender = GenderType.FEMALE;
+	        	if (separated[1].equals("m,f")||separated[1].equals("f,m")) gender = GenderType.BOTH;
 	        	ArrayList<String> origin = new ArrayList<String>();
 	        	origin.add(separated[2]);	        	
 	        	mFirstnames.add(new Firstname(name, frequency, gender, origin));

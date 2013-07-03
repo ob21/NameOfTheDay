@@ -6,13 +6,36 @@ public class Firstname {
 	
 	private String mName;
 	
-	private float mFrequency;
+	private float mFrequency;	
 	
-	private boolean mGender;
+	public enum GenderType {
+		MALE("male", 0),
+		FEMALE("female", 1),
+		BOTH("both", 2);
+		
+	    private String stringValue;
+	    private int intValue;
+	    
+	    GenderType(String toString, int value) {
+	        stringValue = toString;
+	        intValue = value;
+	    }
+
+	    @Override
+	    public String toString() {
+	        return stringValue;
+	    }
+	    
+	    public int toInt() {
+	        return intValue;
+	    }
+	}
+	
+	private GenderType mGender;
 	
 	private ArrayList<String> mOrigin;
 	
-	public Firstname(String name, float frequency, boolean gender, ArrayList<String> origin) {
+	public Firstname(String name, float frequency, GenderType gender, ArrayList<String> origin) {
 		super();
 		this.setName(name);
 		this.setFrequency(frequency);
@@ -36,11 +59,11 @@ public class Firstname {
 		this.mFrequency = mFrequency;
 	}
 
-	public boolean getGender() {
+	public GenderType getGender() {
 		return mGender;
 	}
 
-	public void setGender(boolean mGender) {
+	public void setGender(GenderType mGender) {
 		this.mGender = mGender;
 	}
 
