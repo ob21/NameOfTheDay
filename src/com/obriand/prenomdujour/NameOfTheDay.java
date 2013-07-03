@@ -31,7 +31,7 @@ public class NameOfTheDay {
 	public void init() {
 		BufferedReader br;
 		try {
-			br = new BufferedReader(new InputStreamReader(mContext.getAssets().open("prenoms.txt")));
+			br = new BufferedReader(new InputStreamReader(mContext.getAssets().open("prenoms.txt"), "windows-1252"));
 			String line = br.readLine();
 			line = br.readLine();
 	        int i =0;
