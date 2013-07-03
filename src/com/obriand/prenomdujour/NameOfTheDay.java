@@ -4,10 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import com.obriand.prenomdujour.Firstname.GenderType;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.net.Uri;
 
 public class NameOfTheDay {
 	
@@ -46,6 +49,15 @@ public class NameOfTheDay {
 	        	ArrayList<String> origin = new ArrayList<String>();
 	        	origin.add(separated[2]);	        	
 	        	mFirstnames.add(new Firstname(name, frequency, gender, origin));
+	        	
+//	    		Uri mNewUri;
+//	    		ContentValues mNewValues = new ContentValues();
+//	    		mNewValues.put(Item.ITEM_NAME, separated[0]);
+//	    		mNewValues.put(Item.ITEM_FREQUENCY, separated[3]);
+//	    		mNewValues.put(Item.ITEM_GENDER, separated[1]);
+//	    		mNewValues.put(Item.ITEM_ORIGIN, separated[2]);
+//	    		mNewUri = mContext.getContentResolver().insert(ItemProvider.CONTENT_URI, mNewValues);
+	        	
 	        	line = br.readLine();
 	        }
 		} catch (IOException e) {
@@ -56,6 +68,16 @@ public class NameOfTheDay {
 
 	public ArrayList<Firstname> getFirstnames() {
 		return mFirstnames;
+	}
+	
+	public ArrayList<Firstname> getMaleFirstnames() {
+		ArrayList<Firstname> maleFirstnames = new ArrayList<Firstname>();
+		Iterator<Firstname> iterator = mFirstnames.iterator();
+		while (iterator.hasNext()) {
+			Firstname firstname = iterator.next();
+			if (firstname.getGender().equals(GenderType.MALE)) maleFirstnames.add(firstname);
+		}
+		return maleFirstnames;
 	}
 
 }

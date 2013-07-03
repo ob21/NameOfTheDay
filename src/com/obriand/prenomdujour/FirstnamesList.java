@@ -45,7 +45,7 @@ public class FirstnamesList extends Activity {
             }
         });
         
-        FirstnamesListAdapter firstnamesListAdapter = new FirstnamesListAdapter(this, R.layout.row_item, NameOfTheDay.getInstance().getFirstnames());
+        FirstnamesListAdapter firstnamesListAdapter = new FirstnamesListAdapter(this, R.layout.row_item, NameOfTheDay.getInstance().getMaleFirstnames());
 
         mListView.setAdapter(firstnamesListAdapter);        
 

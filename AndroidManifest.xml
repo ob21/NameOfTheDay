@@ -28,6 +28,9 @@
             android:name="com.obriand.prenomdujour.FirstnamesList"
             android:label="@string/app_name" />
         
+        <provider android:name="com.obriand.prenomdujour.ItemProvider"
+            android:authorities="com.obriand.prenomdujour.itemprovider" />
+        
     </application>
 
 </manifest>

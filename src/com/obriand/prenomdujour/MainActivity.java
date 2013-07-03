@@ -1,12 +1,15 @@
 package com.obriand.prenomdujour;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
@@ -18,6 +21,12 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		new NameOfTheDay(getApplicationContext());
+		
+//		String columns[] = new String[] { Item.ITEM_ID,
+//				Item.ITEM_NAME, Item.ITEM_FREQUENCY, Item.ITEM_GENDER, Item.ITEM_ORIGIN };
+//		Uri mItems = ItemProvider.CONTENT_URI;
+//		Cursor cur = getContentResolver().query(mItems, columns, null, null, null);
+//		Toast.makeText(this, cur.getCount() + "", Toast.LENGTH_LONG).show();
 		
 		mButton = (Button) this.findViewById(R.id.main_firstnames_list_bt);		
 		mButton.setOnClickListener(new OnClickListener() {
