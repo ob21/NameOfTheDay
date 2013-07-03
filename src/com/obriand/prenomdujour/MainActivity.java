@@ -17,8 +17,9 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		mButton = (Button) this.findViewById(R.id.main_firstnames_list_bt);
+		new NameOfTheDay(getApplicationContext());
 		
+		mButton = (Button) this.findViewById(R.id.main_firstnames_list_bt);		
 		mButton.setOnClickListener(new OnClickListener() {
 
 			@Override
