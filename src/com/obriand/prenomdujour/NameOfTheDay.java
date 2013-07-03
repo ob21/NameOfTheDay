@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import android.content.Context;
-import android.util.Log;
 
 public class NameOfTheDay {
 	
@@ -34,7 +33,6 @@ public class NameOfTheDay {
 			br = new BufferedReader(new InputStreamReader(mContext.getAssets().open("prenoms.txt"), "windows-1252"));
 			String line = br.readLine();
 			line = br.readLine();
-	        int i =0;
 	        while (line!=null) {	        	  
 	        	String[] separated = line.split("	");
 	        	String name = separated[0];
