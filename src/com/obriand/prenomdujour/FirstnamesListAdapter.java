@@ -1,6 +1,7 @@
 package com.obriand.prenomdujour;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -51,7 +52,10 @@ public class FirstnamesListAdapter extends ArrayAdapter<Firstname> {
 
 	    Firstname firstname = mFirstnames.get(position);
 	    holder.txtTitle.setText(firstname.getName());
-	    holder.txtDesc.setText(String.valueOf(firstname.getOrigin().get(0)+" "+firstname.getFrequency())+" "+firstname.getGender().toString());
+	    Iterator<String> iterator = firstname.getOrigin().iterator();
+	    String originsString = iterator.next();
+	    while (iterator.hasNext()) originsString+=","+iterator.next();
+	    holder.txtDesc.setText(originsString+" "+firstname.getFrequency()+" "+firstname.getGender().toString());
 	   
 	    return view;
 

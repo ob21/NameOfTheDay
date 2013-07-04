@@ -15,12 +15,48 @@
         android:text="@string/hello_world" />
 
     <Button
-        android:id="@+id/main_firstnames_list_bt"
+        android:id="@+id/main_all_firstnames_list_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/main_tv"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
-        android:text="@string/firsnames_list_bt" />
+        android:text="@string/all_firstnames_list_bt" />
+    
+     <Button
+        android:id="@+id/main_male_firstnames_list_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_all_firstnames_list_bt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="@string/male_firstnames_list_bt" />
+     
+     <Button
+        android:id="@+id/main_male_frequent_firstnames_list_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_male_firstnames_list_bt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="@string/male_frequent_firstnames_list_bt" />
+     
+     <Button
+        android:id="@+id/main_male_frequent_french_firstnames_list_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_male_frequent_firstnames_list_bt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="@string/male_frequent_french_firstnames_list_bt" />
+     
+     <Button
+        android:id="@+id/main_male_veryfrequent_french_firstnames_list_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/main_male_frequent_french_firstnames_list_bt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="@string/male_veryfrequent_french_firstnames_list_bt" />
 
 </RelativeLayout>

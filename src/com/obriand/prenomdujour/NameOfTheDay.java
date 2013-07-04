@@ -11,6 +11,7 @@ import com.obriand.prenomdujour.Firstname.GenderType;
 import android.content.ContentValues;
 import android.content.Context;
 import android.net.Uri;
+import android.util.Log;
 
 public class NameOfTheDay {
 	
@@ -47,7 +48,10 @@ public class NameOfTheDay {
 	        	if (separated[1].equals("f")) gender = GenderType.FEMALE;
 	        	if (separated[1].equals("m,f")||separated[1].equals("f,m")) gender = GenderType.BOTH;
 	        	ArrayList<String> origin = new ArrayList<String>();
-	        	origin.add(separated[2]);	        	
+	        	String[] origins = separated[2].split(",");
+	        	for(int i=0; i<origins.length; i++) { 
+	        		origin.add(origins[i].trim());
+	        	}
 	        	mFirstnames.add(new Firstname(name, frequency, gender, origin));
 	        	
 //	    		Uri mNewUri;
@@ -70,14 +74,26 @@ public class NameOfTheDay {
 		return mFirstnames;
 	}
 	
-	public ArrayList<Firstname> getMaleFirstnames() {
-		ArrayList<Firstname> maleFirstnames = new ArrayList<Firstname>();
+	public ArrayList<Firstname> getFirstnames(GenderType gender, float frequencyLevel, ArrayList<String> origins) {
+		ArrayList<Firstname> filteredFirstnames = new ArrayList<Firstname>();
 		Iterator<Firstname> iterator = mFirstnames.iterator();
 		while (iterator.hasNext()) {
 			Firstname firstname = iterator.next();
-			if (firstname.getGender().equals(GenderType.MALE)) maleFirstnames.add(firstname);
+			Firstname selectedFirstname = null;
+			if (gender != null) {
+				if (firstname.getGender().equals(gender)) {
+					if (firstname.getFrequency() > frequencyLevel) {
+						if (origins!=null) {
+							Log.i("firstname.getOrigin():", firstname.getOrigin().toString());
+							Log.i("origins:", origins.toString());
+							if (firstname.getOrigin().containsAll(origins)) selectedFirstname = firstname;
+						} else selectedFirstname = firstname;
+					}
+				}
+			}			
+			if (selectedFirstname != null) filteredFirstnames.add(selectedFirstname);
 		}
-		return maleFirstnames;
+		return filteredFirstnames;
 	}
 
 }

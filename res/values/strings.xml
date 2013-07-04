@@ -5,7 +5,11 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     
-    <string name="firsnames_list_bt">Firstnames</string>
+    <string name="all_firstnames_list_bt">All firstnames</string>
+    <string name="male_firstnames_list_bt">Male firstnames</string>
+    <string name="male_frequent_firstnames_list_bt">Male and frequent firstnames</string>
+    <string name="male_frequent_french_firstnames_list_bt">Male, frequent (>5.0) and french firstnames</string>
+    <string name="male_veryfrequent_french_firstnames_list_bt">Male, very frequent (>100.0) and french firstnames</string>
     
     <string name="firsname_dialog_ok_bt">OK</string>
 
