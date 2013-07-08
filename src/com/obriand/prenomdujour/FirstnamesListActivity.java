@@ -60,7 +60,6 @@ public class FirstnamesListActivity extends Activity {
         	GenderType gender = null;
         	String name = "";
         	if (filter.contains("name[")) name = filter.substring(filter.indexOf("[")+1, filter.indexOf("]"));
-        	Toast.makeText(this, name, Toast.LENGTH_LONG).show();
         	if (filter.contains("male")) gender = GenderType.MALE;
         	if (filter.contains("female")) gender = GenderType.FEMALE;
         	if (filter.contains("both")) gender = GenderType.BOTH;
