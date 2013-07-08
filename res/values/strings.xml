@@ -23,7 +23,7 @@
     <string name="choice_veryhigh_rbt">very hight</string>    
     <string name="choice_high_rbt">high</string>    
     <string name="choice_low_rbt">all</string>    
-    <string name="choice_origin_picker_bt">pick origins</string>
+    <string name="choice_origin_picker_sp">pick origins</string>
 
     <string name="firsname_dialog_ok_bt">OK</string>
     

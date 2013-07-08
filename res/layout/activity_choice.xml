@@ -101,7 +101,8 @@
         android:id="@+id/choice_origins_sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/choice_search_bt"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/choice_frequency_rg"
+        android:prompt="@id/choice_origins_sp" />
 
 </RelativeLayout>
