@@ -34,7 +34,7 @@ public final class R {
         public static final int choice_male_cb=0x7f080003;
         public static final int choice_name_et=0x7f080001;
         public static final int choice_name_tv=0x7f080000;
-        public static final int choice_origin_picker_bt=0x7f08000b;
+        public static final int choice_origins_sp=0x7f08000b;
         public static final int choice_search_bt=0x7f08000a;
         public static final int choice_veryhigh_rbt=0x7f080006;
         public static final int firstnames_list_lv=0x7f08000c;

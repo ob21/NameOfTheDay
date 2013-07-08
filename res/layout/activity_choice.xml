@@ -43,7 +43,7 @@
         <RadioButton
             android:id="@+id/choice_high_rbt"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"            
+            android:layout_height="wrap_content"
             android:text="@string/choice_high_rbt" />
 
         <RadioButton
@@ -93,18 +93,15 @@
         android:id="@+id/choice_search_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/choice_origin_picker_bt"
-        android:layout_marginTop="14dp"
-        android:layout_toRightOf="@+id/choice_male_cb"
+        android:layout_alignLeft="@+id/choice_frequency_tv"
+        android:layout_alignParentBottom="true"
         android:text="@string/choice_search_bt" />
 
-    <Button
-        android:id="@+id/choice_origin_picker_bt"
+    <Spinner
+        android:id="@+id/choice_origins_sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/choice_frequency_rg"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="@string/choice_origin_picker_bt" />
+        android:layout_above="@+id/choice_search_bt"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
