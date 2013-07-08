@@ -18,6 +18,7 @@ public class MainActivity extends Activity {
 	private Button mMaleFrequentFirstnamesBt;
 	private Button mMaleFrequentFrenchFirstnamesBt;
 	private Button mMaleVeryFrequentFrenchFirstnamesBt;
+	private Button mChoiceBt;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(MainActivity.this, FirstnamesList.class);
+				Intent intent = new Intent(MainActivity.this, FirstnamesListActivity.class);
 				intent.putExtra("filter", "all");
 				startActivity(intent);
 			}			
@@ -48,7 +49,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(MainActivity.this, FirstnamesList.class);
+				Intent intent = new Intent(MainActivity.this, FirstnamesListActivity.class);
 				intent.putExtra("filter", "male");
 				startActivity(intent);
 			}			
@@ -59,7 +60,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(MainActivity.this, FirstnamesList.class);
+				Intent intent = new Intent(MainActivity.this, FirstnamesListActivity.class);
 				intent.putExtra("filter", "male|frequent");
 				startActivity(intent);
 			}			
@@ -70,7 +71,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(MainActivity.this, FirstnamesList.class);
+				Intent intent = new Intent(MainActivity.this, FirstnamesListActivity.class);
 				intent.putExtra("filter", "male|frequent|french");
 				startActivity(intent);
 			}			
@@ -81,8 +82,18 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(MainActivity.this, FirstnamesList.class);
+				Intent intent = new Intent(MainActivity.this, FirstnamesListActivity.class);
 				intent.putExtra("filter", "male|veryfrequent|french");
+				startActivity(intent);
+			}			
+		});
+		
+		mChoiceBt = (Button) this.findViewById(R.id.main_choice_bt);		
+		mChoiceBt.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(MainActivity.this, ChoiceActivity.class);
 				startActivity(intent);
 			}			
 		});

@@ -10,7 +10,21 @@
     <string name="male_frequent_firstnames_list_bt">Male and frequent firstnames</string>
     <string name="male_frequent_french_firstnames_list_bt">Male, frequent (>5.0) and french firstnames</string>
     <string name="male_veryfrequent_french_firstnames_list_bt">Male, very frequent (>100.0) and french firstnames</string>
-    
-    <string name="firsname_dialog_ok_bt">OK</string>
+    <string name="main_choice_bt">Choice criteria</string>
+           
+    <string name="choice_search_bt">Search</string>    
+    <string name="choice_name_tv">First letters of the name</string>    
+    <string name="choice_gender_tv">Gender</string>    
+    <string name="choice_male_cb">Male</string>    
+    <string name="choice_female_cb">Female</string>    
+    <string name="choice_name_et"></string>    
+    <string name="choice_frequency_tv">Frequency</string>    
+    <string name="choice_veryhigh_frequency_ctv">Very frequent</string>
+    <string name="choice_veryhigh_rbt">very hight</string>    
+    <string name="choice_high_rbt">high</string>    
+    <string name="choice_low_rbt">all</string>    
+    <string name="choice_origin_picker_bt">pick origins</string>
 
+    <string name="firsname_dialog_ok_bt">OK</string>
+    
 </resources>

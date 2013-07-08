@@ -75,6 +75,7 @@ public class NameOfTheDay {
 	}
 	
 	public ArrayList<Firstname> getFirstnames(GenderType gender, float frequencyLevel, ArrayList<String> origins) {
+		if (gender==null) gender = GenderType.BOTH;		
 		ArrayList<Firstname> filteredFirstnames = new ArrayList<Firstname>();
 		Iterator<Firstname> iterator = mFirstnames.iterator();
 		while (iterator.hasNext()) {
