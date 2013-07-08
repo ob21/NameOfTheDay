@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class ChoiceActivity extends Activity {
 	
@@ -16,9 +18,7 @@ public class ChoiceActivity extends Activity {
 	private EditText mNameEt;
 	private CheckBox mMaleCb;
 	private CheckBox mFemaleCb;
-	private RadioButton mVeryHighFreqRbt;
-	private RadioButton mHighFreqRbt;
-	private RadioButton mAllFreqRbt;
+	private RadioGroup mFreqRgp;
 		
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -26,7 +26,10 @@ public class ChoiceActivity extends Activity {
 
         setContentView(R.layout.activity_choice);
         
-        
+        mNameEt = (EditText) this.findViewById(R.id.choice_name_et);
+        mMaleCb = (CheckBox) this.findViewById(R.id.choice_male_cb);
+        mFemaleCb = (CheckBox) this.findViewById(R.id.choice_female_cb);
+        mFreqRgp = (RadioGroup) this.findViewById(R.id.choice_frequency_rg);        
                 
         mSearchBt = (Button) this.findViewById(R.id.choice_search_bt);		
         mSearchBt.setOnClickListener(new OnClickListener() {
@@ -34,7 +37,20 @@ public class ChoiceActivity extends Activity {
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(ChoiceActivity.this, FirstnamesListActivity.class);
-				intent.putExtra("filter", "all");
+				StringBuilder filter = new StringBuilder("");
+				filter.append("name["+mNameEt.getText().toString()+"]");
+				if ( mMaleCb.isChecked() && !mFemaleCb.isChecked() ) filter.append("|male");
+				if ( mFemaleCb.isChecked() && !mMaleCb.isChecked() ) filter.append("|female");
+				if ( mFemaleCb.isChecked() && mMaleCb.isChecked() ) filter.append("|both|male|female");
+				switch (mFreqRgp.getCheckedRadioButtonId()) {
+					case R.id.choice_veryhigh_rbt :
+						filter.append("|veryfrequent");
+					case R.id.choice_high_rbt :
+						filter.append("|frequent");
+					case R.id.choice_low_rbt :
+						filter.append("|all");
+				}
+				intent.putExtra("filter", filter.toString());
 				startActivity(intent);
 			}			
 		});

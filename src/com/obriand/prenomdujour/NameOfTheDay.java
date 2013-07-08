@@ -12,6 +12,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
+import android.widget.Toast;
 
 public class NameOfTheDay {
 	
@@ -74,25 +75,41 @@ public class NameOfTheDay {
 		return mFirstnames;
 	}
 	
-	public ArrayList<Firstname> getFirstnames(GenderType gender, float frequencyLevel, ArrayList<String> origins) {
-		if (gender==null) gender = GenderType.BOTH;		
+	public ArrayList<Firstname> getFirstnames(String name, GenderType gender, float frequencyLevel, ArrayList<String> origins) {
+		if (name == null) name = "";
+		if (gender == null) gender = GenderType.BOTH;		
 		ArrayList<Firstname> filteredFirstnames = new ArrayList<Firstname>();
 		Iterator<Firstname> iterator = mFirstnames.iterator();
 		while (iterator.hasNext()) {
 			Firstname firstname = iterator.next();
 			Firstname selectedFirstname = null;
-			if (gender != null) {
-				if (firstname.getGender().equals(gender)) {
-					if (firstname.getFrequency() > frequencyLevel) {
-						if (origins!=null) {
-							Log.i("firstname.getOrigin():", firstname.getOrigin().toString());
-							Log.i("origins:", origins.toString());
-							if (firstname.getOrigin().containsAll(origins)) selectedFirstname = firstname;
-						} else selectedFirstname = firstname;
+			if (firstname.getFrequency() > frequencyLevel) {
+				if (origins != null) {
+					if (firstname.getOrigin().containsAll(origins))
+						selectedFirstname = firstname;
+				} else
+					selectedFirstname = firstname;
+			}
+			
+			Firstname selected2Firstname = null;
+			if (selectedFirstname != null) {
+				if (gender == GenderType.BOTH) {
+					selected2Firstname = selectedFirstname;
+				} else {
+					if (selectedFirstname.getGender() == gender) {
+						selected2Firstname = selectedFirstname;
 					}
 				}
-			}			
-			if (selectedFirstname != null) filteredFirstnames.add(selectedFirstname);
+			}
+
+			if (selected2Firstname != null) {
+				if (name != "") {
+					if (selected2Firstname.getName().startsWith(name))
+						filteredFirstnames.add(selected2Firstname);
+				} else {
+					filteredFirstnames.add(selected2Firstname);
+				}
+			}
 		}
 		return filteredFirstnames;
 	}

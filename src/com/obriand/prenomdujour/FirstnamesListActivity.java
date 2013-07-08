@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FirstnamesListActivity extends Activity {
 	
@@ -57,6 +58,9 @@ public class FirstnamesListActivity extends Activity {
         	firstnamesListAdapter = new FirstnamesListAdapter(this, R.layout.row_item, NameOfTheDay.getInstance().getFirstnames());
         } else {
         	GenderType gender = null;
+        	String name = "";
+        	if (filter.contains("name[")) name = filter.substring(filter.indexOf("[")+1, filter.indexOf("]"));
+        	Toast.makeText(this, name, Toast.LENGTH_LONG).show();
         	if (filter.contains("male")) gender = GenderType.MALE;
         	if (filter.contains("female")) gender = GenderType.FEMALE;
         	if (filter.contains("both")) gender = GenderType.BOTH;
@@ -87,7 +91,7 @@ public class FirstnamesListActivity extends Activity {
         	if (filter.contains("history")) origins.add("history");
         	if (filter.contains("esperanto")) origins.add("esperanto");
         	if (filter.contains("anglo-saxon")) origins.add("anglo-saxon");
-        	firstnamesListAdapter = new FirstnamesListAdapter(this, R.layout.row_item, NameOfTheDay.getInstance().getFirstnames(gender, frequencyLevel, origins));        	
+        	firstnamesListAdapter = new FirstnamesListAdapter(this, R.layout.row_item, NameOfTheDay.getInstance().getFirstnames(name, gender, frequencyLevel, origins));        	
         }
 
         mListView.setAdapter(firstnamesListAdapter);        

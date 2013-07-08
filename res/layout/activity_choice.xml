@@ -3,15 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/choice_search_bt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="55dp"
-        android:text="@string/choice_search_bt" />
-
     <TextView
         android:id="@+id/choice_name_tv"
         android:layout_width="wrap_content"
@@ -42,40 +33,32 @@
         android:text="@string/choice_frequency_tv"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <RadioButton
-        android:id="@+id/choice_high_rbt"
+    <RadioGroup
+        android:id="@+id/choice_frequency_rg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/choice_veryhigh_rbt"
-        android:layout_alignBottom="@+id/choice_veryhigh_rbt"
-        android:layout_centerHorizontal="true"
-        android:text="@string/choice_high_rbt" />
+        android:layout_alignLeft="@+id/choice_male_cb"
+        android:layout_below="@+id/choice_frequency_tv" >
 
-    <Button
-        android:id="@+id/choice_origin_picker_bt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/choice_high_rbt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:text="@string/choice_origin_picker_bt" />
+        <RadioButton
+            android:id="@+id/choice_high_rbt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+            android:text="@string/choice_high_rbt" />
 
-    <RadioButton
-        android:id="@+id/choice_veryhigh_rbt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/choice_frequency_tv"
-        android:layout_toLeftOf="@+id/choice_search_bt"
-        android:text="@string/choice_veryhigh_rbt" />
+        <RadioButton
+            android:id="@+id/choice_veryhigh_rbt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choice_veryhigh_rbt" />
 
-    <RadioButton
-        android:id="@+id/choice_low_rbt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/choice_origin_picker_bt"
-        android:layout_toRightOf="@+id/choice_high_rbt"
-        android:checked="true"
-        android:text="@string/choice_low_rbt" />
+        <RadioButton
+            android:id="@+id/choice_low_rbt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/choice_low_rbt" />
+    </RadioGroup>
 
     <CheckBox
         android:id="@+id/choice_male_cb"
@@ -105,5 +88,23 @@
         android:layout_marginTop="30dp"
         android:text="@string/choice_gender_tv"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/choice_search_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/choice_origin_picker_bt"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/choice_male_cb"
+        android:text="@string/choice_search_bt" />
+
+    <Button
+        android:id="@+id/choice_origin_picker_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/choice_frequency_rg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/choice_origin_picker_bt" />
 
 </RelativeLayout>
